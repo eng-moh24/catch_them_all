@@ -1,6 +1,0 @@
-setup.py
-turtle_intfaces/__init__.py
-turtle_intfaces.egg-info/PKG-INFO
-turtle_intfaces.egg-info/SOURCES.txt
-turtle_intfaces.egg-info/dependency_links.txt
-turtle_intfaces.egg-info/top_level.txt
