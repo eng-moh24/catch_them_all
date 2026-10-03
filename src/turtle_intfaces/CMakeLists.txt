@@ -9,8 +9,9 @@ endif()
 find_package(ament_cmake REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
 
-ros_idl_generate_interfaces(${PROJECT_NAME}
-  "msg/TurtleArray.msg"
+
+rosidl_generate_interfaces(${PROJECT_NAME}
+  "msg/Turtle.msg"
 )
 
 if(BUILD_TESTING)

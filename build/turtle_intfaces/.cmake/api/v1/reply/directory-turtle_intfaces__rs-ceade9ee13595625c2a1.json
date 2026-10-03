@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "turtle_intfaces__rs",
+		"source" : "/home/engmoh/ROSPROJS/catchdimall/build/turtle_intfaces/turtle_intfaces__rs"
+	}
+}
