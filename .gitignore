@@ -1,0 +1,7 @@
+# Ignore ROS 2 build artifacts
+build/
+install/
+log/
+
+# Ignore VS Code configuration
+.vscode/
