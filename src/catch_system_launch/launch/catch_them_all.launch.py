@@ -12,5 +12,10 @@ def generate_launch_description():
             package="catch_system",
             executable="spawn_manager",
             name="spawn_manager"
+        ),
+        Node(
+            package="catch_system",
+            executable="controller_node",
+            name="controller_node"
         )
     ])
