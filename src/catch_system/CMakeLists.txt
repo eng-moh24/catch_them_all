@@ -10,12 +10,20 @@ find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(turtle_interfaces REQUIRED)
 find_package(turtlesim REQUIRED)
+find_package(geometry_msgs REQUIRED)
+find_package(std_srvs)
+
 
 add_executable(spawn_manager src/spawn_manager.cpp)
+add_executable(controller_node src/controller_node.cpp)
+
 target_include_directories(spawn_manager PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
   $<INSTALL_INTERFACE:include>)
-target_compile_features(spawn_manager PUBLIC c_std_99 cxx_std_17)  # Require C99 and C++17
+target_compile_features(spawn_manager PUBLIC c_std_99 cxx_std_17)
+target_compile_features(controller_node PUBLIC c_std_99 cxx_std_17)
+
+
 ament_target_dependencies(
   spawn_manager
   "rclcpp"
@@ -23,7 +31,18 @@ ament_target_dependencies(
   "turtlesim"
 )
 
-install(TARGETS spawn_manager
+ament_target_dependencies(
+  controller_node
+  "rclcpp"
+  "turtle_interfaces"
+  "turtlesim"
+  "std_srvs"
+  "geometry_msgs"
+)
+
+install(TARGETS 
+spawn_manager
+controller_node
   DESTINATION lib/${PROJECT_NAME})
 
 if(BUILD_TESTING)
